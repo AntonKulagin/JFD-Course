@@ -13,3 +13,4 @@ const temperatureInFahrenheit = temperatureInCelsius * 9 / 5 + 32;
 console.log(temperatureInCelsius, 'Не соблюдено правило написания lowCamelCase')
 alert(`${temperatureInCelsius} градусов по Цельсию - это ${temperatureInFahrenheit} по 
 Фаренгейту.`);
+console.log('Исправить % на $')
