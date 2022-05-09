@@ -1,6 +1,6 @@
 let health = prompt('Введите число параметра "здоровье" для персонажа')
 health = Number(health)
-console.log('Переменную health привести к типу данных "number"')
+console.log(`Переменная health = ${health}, тип данных должен быть "number": ${typeof health}`)
 if (health <= 0 || !health) {
 	console.log('Условие заключить в скобки, изменить первое условие "<" на "<=", знак "!" ставится перед переменной')
 	alert('Параметр "здоровье" должен быть больше нуля!')
