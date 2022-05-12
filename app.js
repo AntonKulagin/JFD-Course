@@ -1,3 +1,16 @@
+
+const salaryOfJuniorDeveloper = 500;
+const numberOfJuniorDevelopers = 3;
+let taxPercentage = 13;
+let totalJuniorDevelopersSalary = 0;
+console.log('Тип данных переменной totalJuniorDevelopersSalary должен быть "number".', `В коде: ${typeof totalJuniorDevelopersSalary}`)
+
+for (let i = 0; i < numberOfJuniorDevelopers; i += 1) {
+	const salaryWithTax = salaryOfJuniorDeveloper - (salaryOfJuniorDeveloper * taxPercentage / 100);
+	totalJuniorDevelopersSalary += salaryWithTax;
+}
+console.log('totalJuniorDevelopersSalary', totalJuniorDevelopersSalary);
+//=======
 let temperatureInCelsius = prompt('Введите температуру в градусах Цельсия');
 
 temperatureInCelsius = Number(temperatureInCelsius)
@@ -14,3 +27,4 @@ console.log(temperatureInCelsius, 'Не соблюдено правило нап
 alert(`${temperatureInCelsius} градусов по Цельсию - это ${temperatureInFahrenheit} по 
 Фаренгейту.`);
 console.log('Исправить % на $')
+
