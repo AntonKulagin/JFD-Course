@@ -8,16 +8,13 @@ function showErrorMessage(message) {
 
 function checkTextOnErrorSymbol(text, errorSymbol, successCallback, errorCallback) {
 
-	let count = 0
-
 	for (let i = 0; i < text.length; i++) {
 		if (text[i] === errorSymbol) {
 			errorCallback(`Найден запрещенный символ "${errorSymbol}" под индексом ${i}.`)
-			count++
 		}
 	}
 
-	if (!count) {
+	if (!text.includes(errorSymbol)) {
 		successCallback('В данном тексте нет запрещенных символов')
 	}
 }
