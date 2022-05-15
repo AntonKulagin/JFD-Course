@@ -20,37 +20,35 @@ function getMathResult(expression) {
 }
 
 function operatorConversion(a, operator, b) {
-	let res
 	switch (operator) {
 		case '>':
-			res = Boolean(a > b)
+			return a > b
 			break
 
 		case '<':
-			res = Boolean(a < b)
+			return a < b
 			break
 
 		case '=':
-			res = Boolean(a = b)
+			return a = b
 			break
 
 		case '+':
-			res = a + b
+			return a + b
 			break
 
 		case '-':
-			res = a - b
+			return a - b
 			break
 
 		case '*':
-			res = a * b
+			return a * b
 			break
 
 		case '/':
-			res = a / b
+			return a / b
 			break
 	}
-	return res
 }
 
 getMathResult(['200', '+', 300]) // 500
