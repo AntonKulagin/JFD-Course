@@ -5,9 +5,10 @@ const student = {
 }
 
 function giveJobToStudent(student, jobName) {
-	student.job = jobName
-	alert(`Поздравляем! У студента ${student.fullName} появилась новая работа! Теперь он ${student.job}`)
-	return student
+	const newStudent = { ...student }
+	newStudent.job = jobName
+	alert(`Поздравляем! У студента ${newStudent.fullName} появилась новая работа! Теперь он ${newStudent.job}`)
+	return newStudent
 }
 
 const updatedStudent = giveJobToStudent(student, 'веб-разработчик');

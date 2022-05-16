@@ -17,14 +17,6 @@ const users = [
 ]
 
 const onlineUsers = users.filter(user => user.status === 'online')
-let usersOnlineNames = ''
-
-onlineUsers.forEach((user, index) => {
-
-	usersOnlineNames += user.username
-	if (index < onlineUsers.length - 1) {
-		usersOnlineNames += ', '
-	}
-})
+const usersOnlineNames = onlineUsers.map(user => user.username).join(', ')
 
 alert(`Сейчас в онлайн следующие пользователи: ${usersOnlineNames}.`)
