@@ -17,13 +17,10 @@ const shoppingBag = [
 
 function getTotalPriceOfShoppingBag(shoppingBag) {
 
-	let sum = 0
-
-	shoppingBag
-		.map(prod => {
-			return { ...prod, ...groceries[prod.product] }
-		})
-		.forEach(prod => sum += calcPrice(prod.quantity, prod.price, prod.discount))
+	const sum = shoppingBag.reduce((acc, prod) => {
+		const allDataOfProduct = { ...prod, ...groceries[prod.product] }
+		return acc += calcPrice(allDataOfProduct.quantity, allDataOfProduct.price, allDataOfProduct.discount)
+	}, 0)
 
 	return sum.toFixed(2)
 }
