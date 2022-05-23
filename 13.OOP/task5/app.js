@@ -17,8 +17,7 @@ class Developer {
 class JuniorDeveloper extends Developer {
 
 	constructor(fullName, age) {
-		super(fullName, age)
-		this.position = 'Junior'
+		super(fullName, age, 'Junior')
 		this.technologies = ['HTML', 'CSS', 'JavaScript']
 	}
 
@@ -30,8 +29,7 @@ class JuniorDeveloper extends Developer {
 class MiddleDeveloper extends Developer {
 
 	constructor(fullName, age) {
-		super(fullName, age)
-		this.position = 'Middle'
+		super(fullName, age, 'Middle')
 		this.technologies = ['HTML', 'CSS', 'JavaScript', 'React']
 	}
 
@@ -43,8 +41,7 @@ class MiddleDeveloper extends Developer {
 class SeniorDeveloper extends Developer {
 
 	constructor(fullName, age) {
-		super(fullName, age)
-		this.position = 'Senior'
+		super(fullName, age, 'Senior')
 		this.technologies = ['HTML', 'CSS', 'JavaScript', 'React', 'NodeJS']
 	}
 

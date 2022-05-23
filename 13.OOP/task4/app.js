@@ -7,17 +7,17 @@ class Dictionary {
 
 	add(word, description) {
 
-		if (!this.words.hasOwnProperty(word)) {
-			const obj = {}
-			obj.word = word
-			obj.description = description
-			this.words[word] = obj
+		if (!this.words[word]) {
+			this.words[word] = {
+				word,
+				description
+			}
 		}
 	}
 
 	remove(word) {
 
-		if (this.words.hasOwnProperty(word)) {
+		if (this.words[word]) {
 			delete this.words[word]
 		} else {
 			console.error(`Слова ${word} нет в словаре. Удалять нечего.`)
@@ -26,7 +26,7 @@ class Dictionary {
 
 	get(word) {
 
-		if (this.words.hasOwnProperty(word)) {
+		if (this.words[word]) {
 			return this.words[word]
 		} else {
 			console.error(`Слова ${word} нет в словаре.`)
@@ -35,28 +35,26 @@ class Dictionary {
 
 	showAllWords() {
 
-		for (const key in this.words) {
-			const obj = this.words[key]
-			console.log(`${obj.word} - ${obj.description}`)
-		}
+		Object.values(this.words).forEach(wordItem => {
+			console.log(`${wordItem.word} - ${wordItem.description}`)
+		})
 	}
 }
 
 class HardWordsDictionary extends Dictionary {
 
 	constructor(name) {
-		super()
-		this.name = name
+		super(name)
 	}
 
 	add(word, description) {
 
-		if (!this.words.hasOwnProperty(word)) {
-			const obj = {}
-			obj.word = word
-			obj.description = description
-			obj.isDifficult = true
-			this.words[word] = obj
+		if (!this.words[word]) {
+			this.words[word] = {
+				word,
+				description,
+				isDifficult: true
+			}
 		}
 	}
 }
@@ -79,4 +77,4 @@ hardWordsDictionary.add(
 )
 
 
-console.log(hardWordsDictionary)
+console.log(hardWordsDictionary.showAllWords())
