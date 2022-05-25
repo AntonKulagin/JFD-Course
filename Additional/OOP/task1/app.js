@@ -8,24 +8,28 @@ class Dictionary {
 	}
 
 	get mainName() {
+
 		return this.#name
 	}
 
 	set setMainName(name) {
+
 		this.#name = name
 	}
 
 	get allWords() {
+
 		return this.#words
 	}
 
 	addNewWord(wordKey, wordObj) {
+
 		this.#words[wordKey] = wordObj
 	}
 
 	add(word, description) {
 
-		if (!this.allWords[word]) {
+		if (!this.#words[word]) {
 			const wordObj = {
 				word,
 				description
@@ -36,29 +40,17 @@ class Dictionary {
 
 	remove(word) {
 
-		// delete this.allWords[word]
-
-		//! Марк, привет.
-		//? Немного не понял, как мне обращаться к приватной переменной в родительском классе
-		//? На прямую "#words" или через метод "allWords" ?
-		//? Работает и так и так. Как и в остальных методах данного класса.
-		//? Но как правильно написать, не понятно.
-
 		delete this.#words[word]
 	}
 
 	get(word) {
 
-		if (this.allWords[word]) {
-			return this.allWords[word]
-		} else {
-			console.error(`Слова ${word} нет в словаре.`)
-		}
+		return this.#words[word]
 	}
 
 	showAllWords() {
 
-		Object.values(this.allWords).forEach(wordItem => {
+		Object.values(this.#words).forEach(wordItem => {
 			console.log(`${wordItem.word} - ${wordItem.description}`)
 		})
 	}
