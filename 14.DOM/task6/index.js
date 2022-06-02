@@ -154,16 +154,10 @@ modalWindow.addEventListener('click', e => {
 
 document.addEventListener('keydown', event => {
 
-	event.preventDefault()
-
-	//! Марк, привет!
-	//? Я немного не понял, если я убираю дефолтное поведение, то
-	//? у меня не получается напечатать новую задачу в инпут.
-	//? Как поступить в этом случае?
-
 	const { key } = event
 
 	if (key === 'Tab') {
+		event.preventDefault()
 		darkTheme = !darkTheme
 		addTheme()
 	}
